@@ -1,0 +1,33 @@
+<!-- display_data.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Data Display</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Bank Name</th>
+                <th>Date</th>
+                <th>Sale Total</th>
+                <th>Sale Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in data %}
+            <tr>
+                <td>{{ entry.bank_name }}</td>
+                <td>{{ entry.date }}</td>
+                <td>{{ entry.sale_total }}</td>
+                <td>{{ entry.sale_amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

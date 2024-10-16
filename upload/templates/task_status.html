@@ -1,0 +1,32 @@
+<!-- task_status.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Status</title>
+</head>
+<body>
+    <h1>Task Statuses</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Task ID</th>
+                <th>Status</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in task_statuses %}
+            <tr>
+                <td>{{ task.task_id }}</td>
+                <td>{{ task.status }}</td>
+                <td>{{ task.result }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No tasks found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

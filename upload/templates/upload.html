@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Upload File</h2>
+
+    <!-- Display success or error messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    
+        <div class="form-group">
+            <label for="bank_name">Bank Name:</label>
+            <select id="bank_name" name="bank_name" class="form-control" required>
+                <option value="hdfc">HDFC</option>
+                <option value="icici">ICICI</option>
+                <option value="karur_vysya">Karur Vysya</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="merchant_name">Merchant Name:</label>
+            <select id="merchant_name" name="merchant_name" class="form-control" required>
+                <option value="irctc_web">IRCTC Web</option>
+                <option value="irctc_app">IRCTC App</option>
+                <option value="irctc_air_ticket">IRCTC Air Ticket</option>
+                <option value="irctc_tourism">IRCTC Tourism</option>
+                <option value="all">All</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="transaction_type">Transaction Type:</label>
+            <select id="transaction_type" name="transaction_type" class="form-control" required>
+                <option value="booking">Booking</option>
+                <option value="refund">Refund</option>
+                <option value="both">Both</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="file">Upload Files:</label>
+            <!-- Allow multiple file uploads -->
+            <input type="file" name="file" class="form-control-file" multiple required>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
