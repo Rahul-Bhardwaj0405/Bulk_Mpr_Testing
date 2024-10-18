@@ -1,1 +1,1 @@
-pandas, openpyxl, xlrd, pyexcel-ods,  chardet , django, celery[redis], django-celery-beat, psycopg2, django-celery-results, oracledb, flower
+pandas, openpyxl, xlrd, pyexcel-ods,  chardet , django, celery[redis], django-celery-beat, psycopg2, django-celery-results, oracledb, flower, django_redis
